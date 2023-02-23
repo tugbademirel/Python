@@ -51,6 +51,7 @@ Vize2 toplam notun %30'una etki edecek.
 Final toplam notun %40'ına etki edecek
 """
 
+"""
 vize1 = int(input("1.Vize:"))
 vize2 = int(input("2.Vize:"))
 final = int(input("Final Notu:"))
@@ -77,3 +78,44 @@ elif(toplam_not >= 55):
     print("Harf notunuz: FD")
 else:
     print("Harf notunuz: FF")
+"""
+
+"""
+Problem 4 Şimdi de geometrik şekil hesaplama işlemi yapalım. 
+İlk olarak kullanıcıdan üçgenin mi dörtgenin mi tipini bulmak istediğini sorun.
+Eğer kullanıcı "Dörtgen" cevabını verirse , 4 tane kenar isteyip bu dörtgenin kare mi , 
+  dikdörtgen mi yoksa sıradan bir dörtgen mi olduğunu bulmaya çalışın.
+
+"""
+
+şekil = input("Hangi şeklin tipini öğrenmek istersiniz?")
+
+if (şekil == "Dörtgen"):
+    print("Lütfen kenarları sırayla giriniz.")
+    a = int(input("1.kenar:"))
+    b = int(input("2.kenar:"))
+    c = int(input("3.kenar:"))
+    d = int(input("4.kenar:"))
+
+    if( a == b and b == c and c == d):
+        print("Kare")
+    if( a == c and b == d):
+        print("Dikdörtgen")
+    else:
+        print("Sıradan dörtgen")
+
+elif (şekil == "Üçgen"):
+    print("Kenarları sırayla giriniz:")
+    a = int(input("1.Kenar:"))
+    b = int(input("2.kenar"))
+    c = int(input("3.Kenar"))
+    if  ( abs(a+b) > c and abs(a+c) > b and abs(b+c) > a):
+        if((a == b and a != c) or (a == c and a != b) or (b == c and b != a)):
+            print("İkizkenar üçgen")
+        elif(a == b and b == c):
+            print("Eşkenar üçgen")
+        else:
+            print("Düz üçgen")
+
+else:
+    print("Geçersiz Şekil...")
